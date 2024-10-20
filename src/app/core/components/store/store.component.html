@@ -1,0 +1,75 @@
+<h1>Items</h1>
+<div class="categories">
+  @if (user$ | async; as user) {
+  <section>
+    <ul>
+      <h2>Active upgrades</h2>
+      <store-item
+        name="headset"
+        type="ppc"
+        [upgradeCost]="3"
+        (upgrade)="upgradePpc(user, $event)"
+      />
+      <store-item
+        name="monitor"
+        type="ppc"
+        [upgradeCost]="15"
+        (upgrade)="upgradePpc(user, $event)"
+      />
+      <store-item
+        name="keyboard"
+        type="ppc"
+        [upgradeCost]="60"
+        (upgrade)="upgradePpc(user, $event)"
+      />
+      <store-item
+        name="mouse"
+        type="ppc"
+        [upgradeCost]="180"
+        (upgrade)="upgradePpc(user, $event)"
+      />
+    </ul>
+  </section>
+  <section>
+    <ul>
+      <h2>Passive upgrades</h2>
+      <store-item
+        name="os"
+        type="pps"
+        [upgradeCost]="5"
+        (upgrade)="upgradePps(user, $event)"
+      />
+      <store-item
+        name="cpu"
+        type="pps"
+        [upgradeCost]="25"
+        (upgrade)="upgradePps(user, $event)"
+      />
+      <store-item
+        name="ram"
+        type="pps"
+        [upgradeCost]="100"
+        (upgrade)="upgradePps(user, $event)"
+      />
+      <store-item
+        name="ssd"
+        type="pps"
+        [upgradeCost]="180"
+        (upgrade)="upgradePps(user, $event)"
+      />
+      <store-item
+        name="gpu"
+        type="pps"
+        [upgradeCost]="300"
+        (upgrade)="upgradePps(user, $event)"
+      />
+      <store-item
+        name="ai"
+        type="pps"
+        [upgradeCost]="500"
+        (upgrade)="upgradePps(user, $event)"
+      />
+    </ul>
+  </section>
+  }
+</div>

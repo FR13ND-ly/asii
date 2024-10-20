@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2.5rem 3rem;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 5px #ffffff79;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy {
+  cursor: pointer;
+  border-bottom: 3px dotted #ccc;
+  transition: 0.2s;
+  &:hover {
+    border-color: rgb(127, 127, 243);
+  }
+  &:active {
+    border-color: blue;
+  }
+}

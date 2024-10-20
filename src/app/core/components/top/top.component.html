@@ -1,0 +1,9 @@
+<h1>Top Developers</h1>
+<hr />
+<ul>
+  @for (dev of (top$ | async); track $index) {
+  <li>
+    <b>{{ dev.username }}</b> - {{ dev.points | price }} CL
+  </li>
+  }
+</ul>

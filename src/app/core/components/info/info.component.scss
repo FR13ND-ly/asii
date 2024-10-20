@@ -1,0 +1,66 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100vw - 4rem);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.points {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.pps {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.ppc {
+  font-size: 1.2rem;
+}
+
+.illustration {
+  cursor: url("/images/bat.png"), auto;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+  margin-left: 7rem;
+  margin-top: -2rem;
+  img {
+    height: 40rem;
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
+    transition: 0.2s;
+  }
+  &:hover img {
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.5));
+  }
+  &:active {
+    scale: 0.95;
+    cursor: url("/images/bat2.png"), auto;
+    img {
+      filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.8));
+    }
+  }
+}
+
+.code {
+  $height: 40rem;
+  background-color: #242424;
+  padding: 0.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid #666;
+  height: $height;
+  box-sizing: border-box;
+  overflow: hidden;
+  pre {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+    width: 50rem;
+    max-height: $height - 3rem;
+  }
+}

@@ -1,0 +1,42 @@
+@if (view() == 0) {
+<h1>Wellcome to ASII</h1>
+<div class="actions">
+  <button mat-stroked-button (click)="view.set(1)">Create new account</button>
+  <button mat-stroked-button (click)="view.set(3)">
+    Enter by existing account
+  </button>
+</div>
+} @else if (view() == 1) {
+<form ngForm (submit)="onCreateAccount()">
+  <h2>Create new account</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input
+      matInput
+      placeholder="Introduce your name"
+      value="John Doe"
+      [formControl]="usernameForm"
+    />
+  </mat-form-field>
+  <button mat-stroked-button>Continue</button>
+</form>
+} @else if (view() == 2) {
+<h2>Account created</h2>
+<div>
+  Token: <b class="copy" (click)="copy()">{{ token() }}</b>
+</div>
+<button mat-stroked-button mat-dialog-close>Continue</button>
+} @else if (view() == 3) {
+<form ngForm (submit)="onEnterAccount()">
+  <h2>Enter by existing account</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Token</mat-label>
+    <input
+      matInput
+      placeholder="Introduce an existing token"
+      [formControl]="tokenForm"
+    />
+  </mat-form-field>
+  <button mat-stroked-button>Continue</button>
+</form>
+}

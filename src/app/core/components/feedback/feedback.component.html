@@ -1,0 +1,22 @@
+<h1>Testimonials</h1>
+<hr />
+<div>
+  @if (username$ | async; as username) {
+  <form [formGroup]="feedbackForm" (submit)="submit(username)">
+    <mat-form-field appearance="outline">
+      <input matInput formControlName="feedback" placeholder="Message" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">
+      Submit <mat-icon>send</mat-icon>
+    </button>
+  </form>
+  }
+</div>
+<div class="comments">
+  <div
+    class="comment"
+    *ngFor="let comment of feedbacks$ | async; let i = index"
+  >
+    {{ comment.data().username }}: {{ comment.data().feedback }}
+  </div>
+</div>

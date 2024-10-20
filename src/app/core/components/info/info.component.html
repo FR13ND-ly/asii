@@ -1,0 +1,20 @@
+@if (user$ | async; as user) {
+<div class="main">
+  <div class="info">
+    <span class="points">Code Lines: {{ user.points | price }}</span>
+    <span class="pps">
+      CL per second: <b>{{ user.ppsUpgrades | pps }}</b>
+    </span>
+    <span class="ppc">
+      CL per click: <b>{{ user.ppcUpgrades | ppc }}</b>
+    </span>
+  </div>
+  <div class="illustration" (click)="click(user)">
+    <img src="/images/dev.png" />
+  </div>
+</div>
+}
+
+<div class="code">
+  <pre>{{ code() }}</pre>
+</div>
