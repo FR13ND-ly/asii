@@ -64,6 +64,7 @@ export class AuthService {
     const q = query(collectionRef, where('uid', '==', uid));
     const querySnapshot = await getDocs(q);
     if (querySnapshot.empty) return false;
+    localStorage.setItem('uid', uid);
     this.login(uid);
     return true;
   }
