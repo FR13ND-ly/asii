@@ -33,7 +33,7 @@ import { TopComponent } from './core/components/top/top.component';
 export class AppComponent implements OnInit {
   store = inject(Store);
   dialog = inject(MatDialog);
-  selectedView = signal(4);
+  selectedView = signal(0);
 
   points$ = this.store.select(selectPoints);
 
