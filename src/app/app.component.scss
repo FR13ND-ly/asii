@@ -14,13 +14,47 @@ header {
     flex-direction: column;
     text-align: right;
   }
+  @media screen and (max-width: 768px) {
+    padding-inline: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    .player_info {
+      display: none;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  right: 0.5rem;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .header {
   display: flex;
   flex-direction: column;
   &__title {
-    font-size: 1.6rem;
+    display: flex;
+    cursor: pointer;
+    b {
+      display: none;
+    }
+    img {
+      width: 1.2rem;
+      margin-inline: 0.5rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &__title {
+      font-size: 1.6rem;
+      b {
+        display: block;
+      }
+      img {
+        width: 2rem;
+      }
+    }
   }
 }
 
@@ -28,6 +62,9 @@ nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 main {
@@ -35,6 +72,10 @@ main {
   grid-template-columns: repeat(3, 1fr);
   padding-inline: 2rem;
   box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    padding-inline: 1rem;
+    margin-top: -1rem;
+  }
 }
 
 .none {

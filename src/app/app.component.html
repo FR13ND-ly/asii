@@ -1,8 +1,20 @@
 <header>
   <div class="header">
-    <span class="header__title"><b>ASII</b> | IT Department</span>
+    <span class="header__title" (click)="onSelectView(0)"
+      ><b>ASII</b> <img src="/images/logo.svg" /> IT Department</span
+    >
     <span class="header__subtitle"></span>
   </div>
+  <button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onSelectView(0)">Info</button>
+    <button mat-menu-item (click)="onSelectView(1)">Store</button>
+    <button mat-menu-item (click)="onSelectView(2)">Top Developers</button>
+    <button mat-menu-item (click)="onSelectView(3)">Testimonials</button>
+    <button mat-menu-item (click)="onSelectView(4)">About</button>
+  </mat-menu>
   <nav>
     <button mat-stroked-button (click)="onSelectView(0)">Info</button>
     <button mat-stroked-button (click)="onSelectView(1)">Store</button>

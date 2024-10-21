@@ -7,11 +7,13 @@ import { selectPoints } from './state/user/user.reducer';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { PricePipe } from './core/pipes/price.pipe';
 import { MatDialog } from '@angular/material/dialog';
-import { selectUid } from './state/auth/auth.reducer';
 import { AuthDialogComponent } from './core/components/auth-dialog/auth-dialog.component';
 import { AboutComponent } from './core/components/about/about.component';
 import { FeedbackComponent } from './core/components/feedback/feedback.component';
 import { TopComponent } from './core/components/top/top.component';
+import { MaterialModule } from './material.module';
+import { MatMenu } from '@angular/material/menu';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ import { TopComponent } from './core/components/top/top.component';
   imports: [
     InfoComponent,
     StoreComponent,
-    MatButton,
+    MaterialModule,
     AsyncPipe,
     PricePipe,
     AboutComponent,

@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   width: calc(100vw - 4rem);
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    width: calc(100vw - 2rem);
+  }
 }
 
 .info {
@@ -13,15 +17,24 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .pps {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .ppc {
   font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .illustration {
@@ -45,6 +58,14 @@
       filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.8));
     }
   }
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    margin-top: 1rem;
+    img {
+      width: 100%;
+      height: fit-content;
+    }
+  }
 }
 
 .code {
@@ -62,5 +83,16 @@
     overflow-y: hidden;
     width: 50rem;
     max-height: $height - 3rem;
+    overflow-x: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    height: 10rem;
+    padding-top: 0rem;
+    margin-bottom: 1rem;
+    pre {
+      width: 100%;
+      max-height: 10rem;
+      font-size: 0.6rem;
+    }
   }
 }
