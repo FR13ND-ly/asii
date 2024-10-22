@@ -44,6 +44,7 @@ export class InfoComponent implements OnInit, OnDestroy {
       this.pps = this.ppsPipe.transform(ppsUpgrades);
     });
     this.subscription = interval(1000).subscribe(() => {
+      if (this.pps < 1) return;
       this.store.dispatch(userActions.addPoints({ points: this.pps }));
       this.updateCode(this.pps);
     });
